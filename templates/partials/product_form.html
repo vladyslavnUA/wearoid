@@ -9,6 +9,20 @@
     <!-- description -->
     <div class='form-group'>
         <label for='description'>Description</label><br>
-        <input class='form-control' id='description' type='text' name='description' vlaue='{{ product.description }}' />
+        <input class='form-control' id='description' type='text' name='description' value='{{ product.description }}' />
     </div>
+
+    <!-- price -->
+    <div class='form-group'>
+        <label for='price'>Price</label><br>
+        <input class='form-control' id='price' type='text' name='price' value='{{ product.price }}' placeholder="$"/>
+    </div>
+
+    <!-- image -->
+    <div class='form-group'>
+        <label for='image'>Image</label><br>
+        <input type="file" name="image" value="image" id="image"> <label for="image"> Select an image to upload</label> <br><input type="image" src=" " alt="Submit" width="100">
+        <input class='form-control' type="file" id='image' type='text' name='image' value='{{ product.image }}' placeholder="$"/><label for="image"> Select an image to upload</label> <br><input type="image" src=" " width="100">
+    </div>
+
 </fieldset>
