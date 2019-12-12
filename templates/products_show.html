@@ -10,20 +10,18 @@
                 <div class="row">
                     <div class="card">
                         <div class="card-title">
-                            <h1 class="card-title">{{ playlist.title }}
-                            <p class="card-body">{{ playlist.description }}</p>
+                            <h1 class="card-title">{{ product.title }}
+                            <p class="card-body">{{ product.description }}</p>
                         </div>
                     </div>
-                     
-                    {% for video in playlist.videos %}
+                    <!-- {% for image in product.images %}
                     <div class="col-lg-4 col-md-6 mb-4"></div>
-                        <!-- <iframe class="float-left" width="560" height="360" src="{{ video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
                         <iframe width="560" height="315" src="{{ video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                    
                     </div>
-                    {% endfor %}
-                    <p><a href="/playlists/{{ playlist._id }}/edit">Edit</a></p>
-                    <p><form method='post' action="/playlists/{{ playlist._id }}"></p>
-                        <button class="btn btn-primary" type="submit">Delete</button>
+                    {% endfor %} -->
+                    <p><a href="/products/{{ product._id }}/edit">Edit Product</a></p>
+                    <p><form method='post' action="/products/{{ product._id }}"></p>
+                        <button class="btn btn-primary" type="submit">[Delete Product]</button>
                     </form></p>
                     {% include 'partials/comment_form.html' %}
                 </div>
