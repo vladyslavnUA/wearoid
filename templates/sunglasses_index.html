@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    {% for sunglass in sunglasses %}
+		<div class="col-md-3">
+	        <h2><a href="/sunglasses/{{sunglass._id}}">{{ sunglass.title }}</h2>
+ 	            <img width="240" height="240" src="/static/{{ sunglass.brand }}.png">
+			<small>{{ sunglass.description }}</small>
+			 <p>${{ sunglass.price }}</p>
+			</a>
+	    </div>
+    {% endfor %}
+</div>
+{% endblock %}
