@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="row">
-    <form method='post' action='/playlists/{{playlist._id}}'>
+    <form method='post' action='/products/{{product._id}}'>
         <input type='hidden' name='_method' value='PUT'/>
-        {% include 'partials/playlists_form.html' %}
-        <button class='btn btn-primary' type='submit'>[save playlist]</button>
+        {% include 'partials/products_form.html' %}
+        <button class='btn btn-primary' type='submit'>[save/post product]</button>
     </form>
 </div>
 {% endblock %}
