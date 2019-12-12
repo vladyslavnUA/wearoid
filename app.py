@@ -24,13 +24,13 @@ def products_new():
 @app.route('/products', methods=['post'])
 def products_submit():
     #grab video IDs and make a list out of them
-    video_ids = request.form.get('video_ids').split()
+    # video_ids = request.form.get('video_ids').split()
     
-    playlist = {
+    product = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
-        'videos': videos,
-        'video_ids': video_ids
+        'price': request.form.get('price'),
+        'image': request.form.get('image')
     }
     product_id = products.insert_one(product).inserted_id
     return redirect(url_for('products_show', product_id=product_id))
@@ -44,12 +44,14 @@ def products_show(product_id):
 
 @app.route('/products/<product_id>', methods=['post'])
 def products_update(product_id):
-    videos_ids = request.form.get('videos_ids').split('/')
-    videos = video_url_creator(videos_ids)
+    # videos_ids = request.form.get('videos_ids').split('/')
+    # videos = video_url_creator(videos_ids)
 
     updated_product = {
         'title': request.form.get('title'),
-        'description': request.form.get('description')
+        'description': request.form.get('description'),
+        'price': request.form.get('price'),
+        'image': request.form.get('image')
     }
 
     products.update_one(
@@ -57,7 +59,7 @@ def products_update(product_id):
         {'$set': updated_product})
     return redirect(url_for('products_show', product_id=product_id))
 
-@app.route('/products/<products_id>/edit')
+@app.route('/products/<product_id>/edit')
 def products_edit(product_id):
     product = products.find_one({'_id': ObjectId(product_id)})
     return render_template('products_edit.html', product=product, title='Edit Product')
