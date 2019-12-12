@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href='/'>Back to Home</a>
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+
+		<!-- Sunglass Name -->
+		<h1>{{ sunglass.sunglass_name }}</h1>
+
+		<!-- Sunglass Picture -->
+		<div class="card"><div class="card-body">
+			<img width="300"  height="300" src="/static/{{ sunglass.brand }}.png">
+		</div></div>
+
+		<!-- Description of the item -->
+		<p>{{ sunglass.description }}</p>
+
+		<!-- item Price -->
+		<p>${{ sunglass.price }}</p>
+		
+		<!-- item brand -->
+		<p>{{ sunglass.brand }} </p>
+
+		<p><a href="/sunglasses/{{ sunglass._id }}/edit"><button  class="btn btn-primary">Edit Item</button></a></p>
+		<p><form method="POST" action="/sunglasses/{{sunglass._id}}/delete">
+			<input type='hidden' name='_method' value='DELETE'>
+
+			<button class="btn btn-primary" type="submit">Delete Item</button>
+		</form></p>
+	</div>
+</div>
+{% endblock %}
