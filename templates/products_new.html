@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/playlists'>
+<form method='POST' action='/products'>
     <fieldset>
-        <legend>new playlist</legend>
+        <legend>list a new product</legend>
         <p>
             <label for='title'>title</label><br>
             <input type='text' name='title' />
@@ -13,15 +13,22 @@
             <input type='text' name='description' />
         </p>
         <p>
-            <label for='playlist-video-ids'>videos</label><br>
-            <p>add the ID of the videos you want to include in you playlist. separate with a newline</p>
+            <label for='price'>price</label><br>
+            <input type='text' name='price' placeholder="$"/>
+        </p>
+        <p>
+            <label for='image'>image</label><br>
+            <p>upload your image</p>
             <textarea id='playlist-video-ids' name='video_ids' rows='10'></textarea>
+        </p>
+        <p>
+        <input type="file" name="image" value="image" id="image"> <label for="image"> Select an image to upload</label> <br><input type="image" src=" " alt="Submit" width="100">
         </p>
     </fieldset>
 
     <!-- button -->
     <p>
-        <button type='submit'>save playlist</button>
+        <button type='submit'>save/list product</button>
     </p>
 </form>
 {% endblock %}
