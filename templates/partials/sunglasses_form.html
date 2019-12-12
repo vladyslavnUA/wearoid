@@ -1,0 +1,39 @@
+<form method='POST' action='/sunglasses'>
+    <fieldset>
+    <legend>{{ sunglass.title }}</legend>
+    <!-- sunglasses title-->
+    <p>
+        <label for='sunglass_name'>Item Name</label><br>
+        <input id="sunglass_name" type='text' name='sunglass_name' value='{{ sunglass.name }}' required/>
+    </p>
+
+    <!-- Description -->
+    <p>
+        <label for='description'>Description</label><br>
+        <input id ="description" type='text' name='description' value='{{ sunglass.description }}' required/>
+    </p>
+
+    <!-- Price -->
+    <p>
+        <label for='price'>Price</label><br>
+        <input id="price" type='number' name='price' placeholder='$' value='{{ sunglass.price }}' required/>
+    </p>
+
+    <!-- brand -->
+    <p>
+        <label for='brand'>Brand</label><br>
+        <input id="brand" type='text' name='brand' value='{{ sunglass.brand }}' required/>
+    </p>
+    <p>
+        <label for='image'>Image</label><br>
+        <p>select an image to upload</p>
+        <input type="file" name="image" id="image">
+    </p>
+
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button class="btn btn-primary" type='submit'>Save Listing</button>
+    </p>
+</form>
