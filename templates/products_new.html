@@ -1,31 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/products'>
-    <fieldset>
-        <legend>list a new product</legend>
-        <p>
-            <label for='title'>title</label><br>
-            <input type='text' name='title' />
-        </p>
-        <p>
-            <label for='description'>description</label><br>
-            <input type='text' name='description' />
-        </p>
-        <p>
-            <label for='price'>price</label><br>
-            <input type='text' name='price' placeholder="$"/>
-        </p>
-        <p>
-            <label for='image'>image</label><br>
-            <p>select an image to upload</p>
-        <input type="file" name="image" value="image" id="image"><br><input type="image" width="100">
-        </p>
-    </fieldset>
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+		<form method='POST' action='/sunglasses'>
+		    {% include "partials/sunglasses_form.html" %}
+		</form>
+	</div>
+</div>
 
-    <!-- button -->
-    <p>
-        <button type='submit'>save/list product</button>
-    </p>
-</form>
+<div class="row">
+	<div class='col-sm-6 col-sm-offset-3'>
+		<a href="/"><button class="btn btn-primary">Cancel</button></a>
+	</div>
+</div>
 {% endblock %}
