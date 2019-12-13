@@ -53,7 +53,7 @@ def sunglasses_update(sunglass_id):
 		"sunglass_name": request.form.get("sunglass_name"),
 		"description": request.form.get("description"),
 		"price": request.form.get("price"),
-        "brand": request.form.get("brand")
+        	"brand": request.form.get("brand")
 	}
 
 	sunglasses.update_one( {"_id" : ObjectId(sunglass_id)}, {"$set" : updated_sunglass})
