@@ -27,7 +27,7 @@ def sunglasses_submit():
 		"sunglass_name": request.form.get("sunglass_name"),
 		"description": request.form.get("description"),
 		"price": request.form.get("price"),
-        "brand": request.form.get("brand")
+        	"brand": request.form.get("brand")
 	}
 	sunglass_id = sunglasses.insert_one(sunglass).inserted_id
 	print(sunglass_id)
